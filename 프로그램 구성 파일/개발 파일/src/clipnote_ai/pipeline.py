@@ -76,6 +76,12 @@ VIDEO_EXTENSIONS = {
 MEDIA_EXTENSIONS = VIDEO_EXTENSIONS | AUDIO_EXTENSIONS
 
 TEXT_MODEL_PRICING_USD_PER_1M = {
+    # 2026-07-30 price cut: luna -80%, terra -20%, sol unchanged.
+    # Cached input reads are 90% off the standard input rate.
+    "gpt-5.6-luna": (0.20, 0.02, 1.20),
+    "gpt-5.6-terra": (2.00, 0.20, 12.00),
+    "gpt-5.6-sol": (5.00, 0.50, 30.00),
+    "gpt-5.6": (5.00, 0.50, 30.00),
     "gpt-5.5": (5.00, 0.50, 30.00),
     "gpt-5.5-2026-04-23": (5.00, 0.50, 30.00),
     "gpt-5.4": (2.50, 0.25, 15.00),

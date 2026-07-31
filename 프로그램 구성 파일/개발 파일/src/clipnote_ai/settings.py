@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 APP_NAME = "MediaSummaryNoteGenerator"
-DEFAULT_TEXT_MODEL = "gpt-5-nano"
+DEFAULT_TEXT_MODEL = "gpt-5.6-luna"
 DEFAULT_OUTPUT_FOLDER_NAME = "생성된 노트"
 DEFAULT_DOWNLOAD_FOLDER_NAME = "다운로드한 영상"
 
@@ -102,7 +102,7 @@ def load_settings() -> AppSettings:
         settings.output_dir_custom = False
     elif not settings.output_dir_custom and _is_default_output_like(str(settings.output_dir)):
         settings.output_dir = str(default_output_dir())
-    if settings.text_model == "gpt-4.1-mini":
+    if settings.text_model in {"gpt-4.1-mini", "gpt-5-nano"}:
         settings.text_model = DEFAULT_TEXT_MODEL
     if not settings.save_api_key:
         settings.api_key = ""
